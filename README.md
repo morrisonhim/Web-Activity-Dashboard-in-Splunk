@@ -63,5 +63,5 @@ Goal: Give a quick summary of Web Statstics.
 + Set Content Title to "Top Requested URIs"
 + Enter the Search String: source="apache_mixed_access_full (1).json" host="DESKTOP-DK91R5E" sourcetype="_json" 
 | stats count AS "Hits" by uri
-![top uris](
+![top uris](https://github.com/morrisonhim/Web-Activity-Dashboard-in-Splunk/blob/main/top%20uris.png)
 
