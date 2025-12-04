@@ -5,7 +5,7 @@ This project walks through creating a Splunk dashboard to analyze web server act
 **Environment**
 + Splunk Enterprise / Splunk Free (installed locally)
 + Sample Dataset: apache_mixed_access_full (1).json
-+ Host: webserver
++ Host: DESKTOP-DK91R5E
 + Sourcetype: _json
 
 **Setup Steps**
@@ -31,13 +31,20 @@ Goal: Provide a quick overview of general web activity using Single Value panels
 1. Total Web Requests
 + Panel type: Single value
 + Title: Total Web Requests
-+ Search query: source= "apache_mixed_access_full (1).json" host="webserver" sourcetype="_json"
++ Search query: source="apache_mixed_access_full (1).json" host="DESKTOP-DK91R5E" sourcetype="_json"
 | stats count AS "Total Web Requests"
 ![total web request](https://github.com/morrisonhim/Web-Activity-Dashboard-in-Splunk/blob/main/total%20web%20request.png)
 
 2. Successful Responses
 + Panel Type: Single Value
 + Title: Successful Response
-+ Search Query: source="apache_mixed_access_full (1).json" host="webserver" sourcetype="_json" method=GET status=200
++ Search Query: source="apache_mixed_access_full (1).json" host="DESKTOP-DK91R5E" sourcetype="_json" method=GET status=200
 | stats count AS "Successful Responses"
+![successful responses](https://github.com/morrisonhim/Web-Activity-Dashboard-in-Splunk/blob/main/successful%20responses.png)
+
+3. Client Errors
++ Panel Type: Single Value
++ Title: Client Errors
++ Search Query: source="apache_logs.json" host="DESKTOP-DK91R5E" sourcetype="_json" | where status>500 | stats count AS "Client Errors"
+![client errors](
 
