@@ -46,10 +46,11 @@ Goal: Provide a quick overview of general web activity using Single Value panels
 + Panel Type: Single Value
 + Title: Client Errors
 + Search Query: source="apache_logs.json" host="DESKTOP-DK91R5E" sourcetype="_json" | where status>500 | stats count AS "Client Errors"
-![
+![clent errors](https://github.com/morrisonhim/Web-Activity-Dashboard-in-Splunk/blob/main/client%20errors.png)
 
 4. Server Errors 
 + Panel Type: Single Value
 + Title: Server Errors 
 + Search Query:source="apache_logs.json" host="DESKTOP-DK91R5E" sourcetype="_json" | where status>500 | stats count AS "Server Errors"
+![server errors](
 
