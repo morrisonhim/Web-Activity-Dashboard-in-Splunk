@@ -26,7 +26,7 @@ To ensure consistency across all dashboard panels:
   - Select Submit
 - Note: For all future panels, set the time to the shared token time_range
 
-**Task 1: Web Activities**
+**Task 2: Web Activities**
 Goal: Provide a quick overview of general web activity using Single Value panels.
 1. Total Web Requests
 + Panel type: Single value
@@ -52,5 +52,16 @@ Goal: Provide a quick overview of general web activity using Single Value panels
 + Panel Type: Single Value
 + Title: Server Errors 
 + Search Query:source="apache_logs.json" host="DESKTOP-DK91R5E" sourcetype="_json" | where status>500 | stats count AS "Server Errors"
-![server errors](
+![server errors](https://github.com/morrisonhim/Web-Activity-Dashboard-in-Splunk/blob/main/server%20errors.png)
+
+**Task 3: Web Stats**
+Goal: Give a quick summary of Web Statstics.
+1. Top Requested URIs
++ Click on Add Panel
++ Under New, choose Bar Chart
++ Use Shared Time Picker time_range
++ Set Content Title to "Top Requested URIs"
++ Enter the Search String: source="apache_mixed_access_full (1).json" host="DESKTOP-DK91R5E" sourcetype="_json" 
+| stats count AS "Hits" by uri
+![top uris](
 
