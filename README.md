@@ -33,3 +33,11 @@ Goal: Provide a quick overview of general web activity using Single Value panels
 + Title: Total Web Requests
 + Search query: source= "apache_mixed_access_full (1).json" host="webserver" sourcetype="_json"
 | stats count AS "Total Web Requests"
+![total web request](https://github.com/morrisonhim/Web-Activity-Dashboard-in-Splunk/blob/main/total%20web%20request.png)
+
+2. Successful Responses
++ Panel Type: Single Value
++ Title: Successful Response
++ Search Query: source="apache_mixed_access_full (1).json" host="webserver" sourcetype="_json" method=GET status=200
+| stats count AS "Successful Responses"
+
