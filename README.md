@@ -84,6 +84,7 @@ This project walks through creating a Splunk dashboard to analyze web server act
 | iplocation ip
 | stats count by Country
 | geom geo_countries featureIdField="Country"
+![map](https://github.com/morrisonhim/Web-Activity-Dashboard-in-Splunk/blob/main/map.png)
 
 
 
