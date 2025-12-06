@@ -89,7 +89,7 @@ This project walks through creating a Splunk dashboard to analyze web server act
 **Web Activity Dashboard**
 ![dashboard](https://github.com/morrisonhim/Web-Activity-Dashboard-in-Splunk/blob/main/dashboard.png)
 
-**Conclusion**
+## Conclusion
 This project demonstrates how Splunk can be leveraged to transform raw Apache web server logs into meaningful, actionable insights. By building the Web Activity Monitoring Dashboard, i established a centralized view of web traffic behavior, HTTP response trends, user activity, and geographic access patterns.
 Through the use of time-based filtering, single-value KPIs, bar charts, and a choropleth map, the dashboard provides both high-level summaries and detailed visibility into how users interact with a web server.
 The approach outlined in this project not only helps in monitoring performance and detecting anomalies, but also forms a strong foundation for future enhancements such as alerting, threat detection, and long-term trend analysis.
