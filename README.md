@@ -15,7 +15,7 @@ This project walks through creating a Splunk dashboard to analyze web server act
 + Begin adding inputs and panels as outlined below
 
 **Task 1: Setting Up Time Range Input**
-To ensure consistency across all dashboard panels:
+- To ensure consistency across all dashboard panels:
 + Click Add Input
 + Select Time
 + Click the pencil icon
@@ -27,7 +27,7 @@ To ensure consistency across all dashboard panels:
 - Note: For all future panels, set the time to the shared token time_range
 
 **Task 2: Web Activities**
-Goal: Provide a quick overview of general web activity using Single Value panels.
+- Goal: Provide a quick overview of general web activity using Single Value panels.
 1. Total Web Requests
 + Panel type: Single value
 + Title: Total Web Requests
@@ -55,7 +55,7 @@ Goal: Provide a quick overview of general web activity using Single Value panels
 ![server errors](https://github.com/morrisonhim/Web-Activity-Dashboard-in-Splunk/blob/main/server%20errors.png)
 
 **Task 3: Web Stats**
-Goal: Give a quick summary of Web Statstics.
+- Goal: Give a quick summary of Web Statstics.
 1. Top Requested URIs
 + Click on Add Panel
 + Under New, choose Bar Chart
@@ -72,5 +72,18 @@ Goal: Give a quick summary of Web Statstics.
 + Set Content Title to "Top Users by IP Address"
 + Enter the Search String: source="apache_mixed_access_full (1).json" host="DESKTOP-DK91R5E" sourcetype="_json" 
 | stats count AS IP by ip
-![]
+![ip address](https://github.com/morrisonhim/Web-Activity-Dashboard-in-Splunk/blob/main/ip%20address.png)
+
+**Task 4: Web Traffic by Client IP Addresses**
++ Click on Add Panel
++ Under New, choose Choropleth Map
++ Use Shared Time Picker time_range
++ Set Content Title to Web Traffic by Client IP Addresses
++ Enter the Search String: source="apache_mixed_access_full (1).json" host="DESKTOP-DK91R5E" sourcetype="_json"     method=GET
+| table ip
+| iplocation ip
+| stats count by Country
+| geom geo_countries featureIdField="Country"
+
+
 
