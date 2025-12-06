@@ -65,3 +65,12 @@ Goal: Give a quick summary of Web Statstics.
 | stats count AS "Hits" by uri
 ![top uris](https://github.com/morrisonhim/Web-Activity-Dashboard-in-Splunk/blob/main/top%20uris.png)
 
+2. Top Users by IP Address
++ Click on Add Panel
++ Under New, choose Bar Chart
++ Use Shared Time Picker time_range
++ Set Content Title to "Top Users by IP Address"
++ Enter the Search String: source="apache_mixed_access_full (1).json" host="DESKTOP-DK91R5E" sourcetype="_json" 
+| stats count AS IP by ip
+![]
+
